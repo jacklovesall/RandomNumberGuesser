@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html id=html>
+  <head>
+    <title>Guess the Number Game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <style>
+    body{
+    background-image: url("https://img.freepik.com/free-vector/hand-drawn-question-mark-pattern_23-2149416617.jpg?w=740&t=st=1692356785~exp=1692357385~hmac=8181aadfb8d89d2fee991876742754a97e5265475cfd92519910e7e6f4c64d30");
+    }
+  </style>
+
+   <div class="waviy">
+   <span style="--i:1">G</span>
+   <span style="--i:2">U</span>
+   <span style="--i:3">E</span>
+   <span style="--i:4">S</span>
+   <span style="--i:5">S</span>
+   <span style="--i:6"> </span>
+   <span style="--i:7">T</span>
+   <span style="--i:8">H</span>
+   <span style="--i:9">E</span>
+   <span style="--i:10"> </span>
+   <span style="--i:11">N</span>
+   <span style="--i:12">U</span>
+   <span style="--i:13">M</span>
+   <span style="--i:14">B</span>
+   <span style="--i:15">E</span>
+   <span style="--i:16">R</span>
+   <span style="--i:17"> </span>
+   <span style="--i:18">G</span>
+   <span style="--i:19">A</span>
+   <span style="--i:20">M</span>
+   <span style="--i:21">E</span>
+  </div>
+    
+    <form onsubmit="guessN(event)" >
+      <p id="instructions">Guess a number between 1 and 100:</p>
+      <input type="number" name="guessInput" min=1 max=100 required>
+      <br>
+      <button id="guess" onmouseenter="ChangeFontsize()" onmouseleave="Fontsize()" type="submit" >Guess</button>
+      <br>
+      <p id="feedback"></p>
+      <p id="attempts"></p>
+      <p id="score"></p>
+    </form>
+    <h3>Game rules:</h3>
+    <p id="gamerules">The game rules are very simple, all you have to do is guess a number from 1 to 100, every time you attempt to guess a number the game will increment your score by 1 point. be careful because the goal of the challenge is to have a lower attempt count while guessing. </p>
+  </body>
+  <script src="script.js"></script>
+</html>
