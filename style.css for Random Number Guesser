@@ -1,0 +1,110 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 24px;
+}
+
+button {
+  padding: 10px 14px;
+  font-size: 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+button:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#score{
+  color:red;
+  font-size: 36px;
+}
+
+#gamerules{
+  color: DarkSlateGray;
+  font-size: 11px;
+  border-style: inset;
+  border-color: #3e8e41;
+  border-width: 2px;
+}
+
+
+h1 {
+  font-size: 36px;
+}
+input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 24px;
+}
+
+#score{
+  color:red;
+  font-size: 36px;
+}
+
+#gamerules{
+  color: white;
+  background-color: black;
+  font-size: 15px;
+  border-style: inset;
+  border-color: white;
+  border-width: 4px;
+}
+
+
+#instructions{
+  color: mediumpurple;
+  font-size 18px;
+  font-weight: bold;
+  
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  
+  display: inline-block;
+  font-size: 35px;
+  color: black;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
