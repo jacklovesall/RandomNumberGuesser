@@ -1,0 +1,102 @@
+/* 
+ * The code defines the logic for a "Guess the Number" game.
+ * The computer generates a random number between 1 and 100.
+ * The player gets up to 5 attempts to guess it.
+ */
+
+// Initializing a random number between 1 and 100 for the user to guess
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+ /* Define a constant for the maximum number of attempts and initialize a counter for user attempts. */
+const MAX_ATTEMPTS = 5;
+let attempts = 1;
+
+/* 
+ * Main function to process the user's guesses.
+ * Compares the player's guess to the generated number and provides feedback.
+ */
+
+function guessN(event) {
+  event.preventDefault(); 
+
+/* Get user's input and references to necessary DOM elements */
+  let form = event.target;
+  let randomN = randomNumber; 
+  let userInput = parseInt(form.guessInput.value); // Get the number 
+  let feedback = document.getElementById("feedback");
+  let score = document.getElementById("score");
+  let attemptPrompt = document.getElementById("attempts");
+  // Calculate the remaining attempts
+  let remainingAttempts = MAX_ATTEMPTS - attempts; 
+
+// Check if there are any attempts left
+  if (remainingAttempts > 0) {
+  // Compare the user's input with the random number
+
+  // If the guess is correct
+    if (userInput == randomN) {
+  // Display success message with number of attempts taken
+      score.innerText = "Congratulations You have guessed the Secret Number in " + attempts + " attempts!🎉";
+      feedback.innerText = "";
+      attemptPrompt.innerText = "";
+      resetButton(attemptPrompt);
+      
+      
+  // If the guess is too low
+    } else if (userInput < randomN) {
+      attempts++;
+      feedback.innerText = "Sorry you're number is too low try again";
+      feedback.style = "color: red; font-weight: bold; font-size: 17px;";
+    
+      attemptPrompt.innerText = "You have " + remainingAttempts  + " remaining!";
+      attemptPrompt.style = "color: blue; font-weight: bold;";
+  // If the guess is too high
+    }else {
+      attempts++;
+      feedback.innerText = "Sorry you're number is too high try again";
+      feedback.style = "color: red; font-weight: bold; font-size: 16px;";
+      attemptPrompt.innerText = "You have " + remainingAttempts + " remaining!";
+      attemptPrompt.style = "color: blue; font-weight: bold;";
+    }
+  //If there are no remaining attempts
+  }else {
+    score.innerText = "Game over";
+    score.style = "font-weight: bold; color: red;";
+    feedback.innerText = "";
+    attemptPrompt.innerText = "";
+  // No attempt left Call the reset function to offer a restart
+    resetButton(attemptPrompt);
+    
+  }
+   
+}  
+function resetButton(attemptPrompt) {
+	attemptPrompt.innerHTML = `<button id="reset" onClick="window.location.reload();" onmouseenter="changeFontReset()" onmouseleave="changeSizeReset()" >Reset</button>`;
+}
+
+/* 
+ * Reset function:
+ * restarts the game by refreshing the page
+ */
+
+
+// changing the size of the button when we hover on top of it and returning to its original size when the mouse leaves the button
+
+function ChangeFontsize(){
+  let font = document.getElementById("guess");
+  font.style = "font-size: 35px;";
+}
+
+function Fontsize(){
+  let size = document.getElementById("guess");
+  size.style = "font-size: 24px;";
+}
+function changeFontReset(){
+  let fontReset = document.getElementByid("reset");
+  fontReset.style = "font-size: 35px;";
+  
+}
+function changeSizeReset(){
+  let sizeReset = document.getElementByid("reset");
+  sizeReset.style = "font-size: 24px;";
+} 
+
